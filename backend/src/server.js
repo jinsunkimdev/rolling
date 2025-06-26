@@ -1,5 +1,6 @@
 import express from "express";
 import "dotenv/config";
+import cors from "cors";
 
 import recipientsRouter from "./routes/recipients.route.js";
 import messagesRoutes from "./routes/messages.route.js";
@@ -12,6 +13,9 @@ const app = express();
 
 // 포트 넘버
 const PORT = process.env.PORT;
+
+// 백엔드 Express 서버에서 (예: app.js)
+app.use(cors());
 
 // JSON 미들웨어 추가
 app.use(express.json());
